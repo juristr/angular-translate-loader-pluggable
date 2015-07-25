@@ -37,6 +37,7 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-translate/dist/angular-translate.js',
+      'node_modules/angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.js',
       'dist/angular-translate-loader-pluggable.min.js',
       'test/**/*.spec.js',
       'src/**/*.js'
