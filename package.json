@@ -1,0 +1,32 @@
+{
+  "name": "angular-translate-loader-pluggable",
+  "version": "1.0.0",
+  "description": "Pluggable loader for angular-translate that allows separate independent angular modules to contribute their angular-translate translations.",
+  "main": "dist/angular-translate-loader-pluggable.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "angular-translate",
+    "loader",
+    "i18n"
+  ],
+  "author": "Juri Strumpflohner",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-ng-annotate": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "less-plugin-clean-css": "^1.5.0",
+    "vinyl-paths": "^1.0.0"
+  }
+}
