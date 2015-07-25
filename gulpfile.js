@@ -13,11 +13,12 @@ var lessPluginCleanCSS = require('less-plugin-clean-css');
 var cleancss = new lessPluginCleanCSS({advanced: true});
 var htmlMin = require('gulp-minify-html');
 var uglify = require('gulp-uglify');
-var karma = require('karma').server;
+var KarmaServer = require('karma').Server;
 
 var path = {
     src: 'src/**/*.js',
-    output: 'dist/'
+    output: 'dist/',
+    test: 'test/'
 };
 
 var compilerOptions = {
@@ -51,14 +52,11 @@ gulp.task('compile', function(){
 });
 
 gulp.task('test', ['compile'], function (done) {
-  karma.start({
-    configFile: __dirname + '/test/conf/karma.conf.js',
+  new KarmaServer({
+    configFile: __dirname + '/' + path.test + 'conf/karma.conf.js',
     singleRun: true
-  }, function(){
-    done();
-  });
+  }, done).start();
 });
 
 gulp.task('build', ['clean', 'compile']);
-
 gulp.task('default', []);

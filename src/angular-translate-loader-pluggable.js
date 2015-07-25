@@ -4,7 +4,6 @@ angular
   ])
   .provider('translatePluggableLoader', translatePluggableLoaderProvider);
 
-
 function translatePluggableLoaderProvider() {
   var loaders = [];
   var translationTable = {};

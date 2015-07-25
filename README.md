@@ -25,6 +25,12 @@ $ npm install
 $ gulp build
 ```
 
+### Execute tests
+
+```
+$ gulp test
+```
+
 ## Contribute
 
 (soon)

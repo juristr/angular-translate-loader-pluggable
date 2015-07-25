@@ -34,8 +34,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-translate/dist/angular-translate.js',
       'dist/angular-translate-loader-pluggable.min.js',
-      'test/**/*.spec.js'
+      'test/**/*.spec.js',
+      'src/**/*.js'
     ],
 
     // jspm: {

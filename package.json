@@ -14,6 +14,9 @@
   "author": "Juri Strumpflohner",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.4.3",
+    "angular-mocks": "^1.4.3",
+    "angular-translate": "^2.7.2",
     "chai": "^3.2.0",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
