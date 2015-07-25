@@ -34,7 +34,7 @@ gulp.task('clean', function() {
     .pipe(vinylPaths(del));
 });
 
-gulp.task('compile', function(){
+gulp.task('compile', ['clean'], function(){
     return gulp.src(path.src)
         .pipe(cache('es6'))
         .pipe(plumber())
@@ -46,7 +46,7 @@ gulp.task('compile', function(){
           gulpWarnings: false
         }))
         .pipe(uglify())
-        .pipe(concat('angular-translate-loader-pluggable.js'))
+        .pipe(concat('angular-translate-loader-pluggable.min.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.output));
 });
@@ -58,5 +58,5 @@ gulp.task('test', ['compile'], function (done) {
   }, done).start();
 });
 
-gulp.task('build', ['clean', 'compile']);
+gulp.task('build', ['compile']);
 gulp.task('default', []);

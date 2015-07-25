@@ -1,10 +1,10 @@
 {
   "name": "angular-translate-loader-pluggable",
-  "version": "1.0.0",
   "description": "Pluggable loader for angular-translate that allows separate independent angular modules to contribute their angular-translate translations.",
-  "main": "dist/angular-translate-loader-pluggable.js",
+  "main": "dist/angular-translate-loader-pluggable.min.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "angular-translate",
@@ -36,6 +36,11 @@
     "karma-jasmine": "^0.3.6",
     "karma-mocha-reporter": "^1.0.2",
     "less-plugin-clean-css": "^1.5.0",
-    "vinyl-paths": "^1.0.0"
+    "vinyl-paths": "^1.0.0",
+    "semantic-release": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juristr/angular-translate-loader-pluggable.git"
   }
 }
