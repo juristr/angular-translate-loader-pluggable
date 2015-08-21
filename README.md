@@ -54,7 +54,7 @@ angular
     translatePluggableLoaderProvider.useLoader('$translatePartialLoader', {
       urlTemplate: '{part}-locale-{lang}.json'
     });
-    
+
     $translatePartialLoaderProvider.addPart('anothermodule');
   });
 ```
@@ -67,30 +67,4 @@ angular
 
 ## Contribute
 
-Of course! If you have improvements, suggestions, let me know about them and either file some issues to discuss something or even better, submit a PR.
-
-Clone this repo and setup your environment
-
-```
-$ npm install -g gulp
-$ npm install
-```
-
-### Build
-
-```
-$ gulp build
-```
-
-### Execute tests
-
-```
-$ gulp test
-```
-
-### Guidelines
-
-There's only one thing: please make sure to follow these guidelines so that I can accept your PR:
-
-- **Write clear commit messages**, by following the [Angular commit messages conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit). I'm using [semantic-release](https://github.com/semantic-release/semantic-release) to automatically assign the semver version number and publish to npm.
-- **Make sure to add tests** that either reproduce some bug or verify the correct functioning of your new feature.
+Of course! If you have improvements, suggestions, let me know about them and either file some issues to discuss something or even better, submit a PR. Please check out our [contribution guidelines](CONTRIBUTING.md)!

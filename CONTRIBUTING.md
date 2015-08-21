@@ -6,6 +6,7 @@ However, for staying organized I'd like you to follow these simple guidelines:
 
 - [Issues](#issues)
 - [Commit Message Guidelines](#commit)
+- [Coding](#coding)
 
 ## <a name="issues"></a> Issues
 
@@ -79,3 +80,24 @@ reference GitHub issues that this commit **Closes**.
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 A detailed explanation can be found in this [document][commit-message-format].
+
+## <a name="coding"></a> Coding
+
+Clone this repo and setup your environment
+
+```
+$ npm install -g gulp
+$ npm install
+```
+
+### Build
+
+```
+$ gulp build
+```
+
+### Execute tests
+
+```
+$ gulp test
+```
