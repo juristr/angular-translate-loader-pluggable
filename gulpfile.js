@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var cache = require('gulp-cached');
 var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
+var rename = require('gulp-rename');
 var ngAnnotate = require('gulp-ng-annotate');
 var vinylPaths = require('vinyl-paths');
 var del = require('del');
@@ -45,16 +46,19 @@ gulp.task('compile', ['clean'], function(){
           sourceMap: true,
           gulpWarnings: false
         }))
+        .pipe(concat('angular-translate-loader-pluggable.js'))
+        .pipe(gulp.dest(path.output))
         .pipe(uglify())
-        .pipe(concat('angular-translate-loader-pluggable.min.js'))
+        // .pipe(concat('angular-translate-loader-pluggable.min.js'))
+        .pipe(rename({ extname: '.min.js'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.output));
 });
 
 gulp.task('test', ['compile'], function (done) {
   new KarmaServer({
-    configFile: __dirname + '/' + path.test + 'conf/karma.conf.js',
-    singleRun: true
+    configFile: __dirname + '/' + path.test + 'conf/karma.conf.js'
+    // singleRun: true
   }, done).start();
 });
 
