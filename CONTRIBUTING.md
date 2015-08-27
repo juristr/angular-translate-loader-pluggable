@@ -15,10 +15,8 @@ If you have a bug or enhancement request, please file an issue.
 When submitting an issue, please include context from your test and
 your application. If there's an error, please include the error text.
 
-It's always easy to undestand the bug/problem visually, you can use a predefined
-jsfiddle example which loads a simple map, which you can use to document your issue:
-
-http://plnkr.co/edit/Smc89rX5UoCXYu6Qp2F0?p=preview
+The best would be to submit a PR with a failing test :smiley:. Otherwise you can use my predefined Plunker to reproduce
+the bug and link it in the issue: http://plnkr.co/edit/Smc89rX5UoCXYu6Qp2F0?p=preview.
 
 ## <a name="commit"></a> Commit Message Guidelines
 
