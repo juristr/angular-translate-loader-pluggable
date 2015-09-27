@@ -14,7 +14,7 @@
     "loader",
     "i18n"
   ],
-  "author": "Juri Strumpflohner",
+  "author": "Juri Strumpflohner <juri.strumpflohner@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "angular": "^1.4.3",
