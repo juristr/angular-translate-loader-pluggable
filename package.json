@@ -4,7 +4,7 @@
   "main": "dist/angular-translate-loader-pluggable.min.js",
   "scripts": {
     "test": "gulp test",
-    "build": "test",
+    "build": "npm run test",
     "prepublish": "npm run build",
     "postpublish": "publish-latest",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
