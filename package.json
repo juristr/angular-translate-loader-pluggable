@@ -4,6 +4,9 @@
   "main": "dist/angular-translate-loader-pluggable.min.js",
   "scripts": {
     "test": "gulp test",
+    "build": "test",
+    "prepublish": "npm run build",
+    "postpublish": "publish-latest",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
@@ -39,6 +42,7 @@
     "karma-phantomjs-launcher": "^0.2.0",
     "less-plugin-clean-css": "^1.5.0",
     "phantomjs": "^1.9.17",
+    "publish-latest": "^1.1.2",
     "semantic-release": "^4.0.0",
     "vinyl-paths": "^1.0.0"
   },
