@@ -57,8 +57,8 @@ gulp.task('compile', ['clean'], function(){
 
 gulp.task('test', ['compile'], function (done) {
   new KarmaServer({
-    configFile: __dirname + '/' + path.test + 'conf/karma.conf.js',
-    singleRun: true
+    configFile: __dirname + '/' + path.test + 'conf/karma.conf.js'
+    // singleRun: true
   }, done).start();
 });
 

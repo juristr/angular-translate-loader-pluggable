@@ -1,3 +1,5 @@
+'use strict';
+
 angular
   .module('angular-translate-loader-pluggable', [
     'pascalprecht.translate'
@@ -6,7 +8,6 @@ angular
 
 function translatePluggableLoaderProvider() {
   var loaders = [];
-  var translationTable = {};
 
   this.useLoader = function(loaderName, options) {
     loaders.push({
@@ -17,13 +18,7 @@ function translatePluggableLoaderProvider() {
     return this;
   };
 
-  this.translations = function(language, translations) {
-    translationTable[language] = angular.extend({}, translationTable[language], translations);
-
-    return this;
-  };
-
-  this.$get = function($q, $injector) {
+  this.$get = function($q, $injector, $translate) {
     return function(options) {
       var deferred = $q.defer();
 
@@ -31,11 +26,10 @@ function translatePluggableLoaderProvider() {
 
       // lookup in translation table
       loaderInstances.push(function() {
-        var deferred = $q.defer();
-
-        deferred.resolve(translationTable[options.key]);
-
-        return deferred.promise;
+        // var deferred = $q.defer();
+        // deferred.resolve(translationTable[options.key]);
+        // return deferred.promise;
+        return $translate(options.key);
       }());
 
       // lookup in loaders

@@ -18,7 +18,7 @@ describe('the pluggble angular-translate loader', function() {
         'pascalprecht.translate'
       ])
       .config(function($translateProvider, translatePluggableLoaderProvider) {
-        translatePluggableLoaderProvider
+        $translateProvider
           .translations('de', {
             "greeting": {
               "friendly": "Hallo, wie geht es dir?"
@@ -49,8 +49,8 @@ describe('the pluggble angular-translate loader', function() {
 
     // hard coded translations
     angular.module('staticTranslationsModule', ['angular-translate-loader-pluggable'])
-      .config(function(translatePluggableLoaderProvider) {
-        translatePluggableLoaderProvider
+      .config(function($translateProvider) {
+        $translateProvider
           .translations('de', {
             "anotherMessage": "Anderes Message!"
           })
@@ -85,7 +85,7 @@ describe('the pluggble angular-translate loader', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should properly resolve static translations', function() {
+  fit('should properly resolve static translations', function() {
     $translate('greeting.friendly').then(function(text) {
       expect(text).toEqual('Hallo, wie geht es dir?');
     });
@@ -104,6 +104,10 @@ describe('the pluggble angular-translate loader', function() {
       expect(text).toEqual('Anderes Message!');
     });
     $httpBackend.flush();
+  });
+
+  it('should properly resolve when using the "instant()" function', function() {
+    expect($translate.instant('anotherMessage')).toEqual('Anderes Message!');
   });
 
 });
