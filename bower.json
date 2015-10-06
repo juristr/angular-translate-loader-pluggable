@@ -1,0 +1,20 @@
+{
+  "name": "angular-translate-loader-pluggable",
+  "description": "Custom angular-translate loader that allows to combine multiple angular-translate loaders.",
+  "authors": [
+    "Juri <juri.strumpflohner@gmail.com>"
+  ],
+  "homepage": "https://github.com/juristr/angular-translate-loader-pluggable",
+  "keywords": [
+    "angular",
+    "angular-translate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
