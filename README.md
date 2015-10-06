@@ -16,6 +16,12 @@ Available as [npm package](https://www.npmjs.com/package/angular-translate-loade
 $ npm install angular-translate-loader-pluggable --save
 ```
 
+or as Bower package
+
+```
+$ bower install angular-translate-loader-pluggable --save
+```
+
 ## Docs & Demo
 
 **Plunkr demo:** http://plnkr.co/edit/Smc89rX5UoCXYu6Qp2F0?p=preview
