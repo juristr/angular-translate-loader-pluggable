@@ -1,5 +1,7 @@
+var moduleName = 'angular-translate-loader-pluggable';
+
 angular
-  .module('angular-translate-loader-pluggable', [
+  .module(moduleName, [
     'pascalprecht.translate'
   ])
   .provider('translatePluggableLoader', translatePluggableLoaderProvider);
@@ -63,3 +65,5 @@ function translatePluggableLoaderProvider() {
     };
   };
 }
+
+return moduleName;
