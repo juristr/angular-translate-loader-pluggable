@@ -2,7 +2,7 @@ angular-translate Pluggable Loader
 ---
 
 [![Build Status](https://travis-ci.org/juristr/angular-translate-loader-pluggable.svg?branch=master)](https://travis-ci.org/juristr/angular-translate-loader-pluggable) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![npm version](https://badge.fury.io/js/angular-translate-loader-pluggable.svg)](http://badge.fury.io/js/angular-translate-loader-pluggable)
+[![npm version](https://badge.fury.io/js/angular-translate-loader-pluggable.svg)](http://badge.fury.io/js/angular-translate-loader-pluggable) [![Bower version](https://badge.fury.io/bo/angular-translate-loader-pluggable.svg)](http://badge.fury.io/bo/angular-translate-loader-pluggable)
 
 Pluggable Loader is a custom loader for [angular-translate](https://github.com/angular-translate/angular-translate). It aims to facilitate the modularization of the applications s.t. each module can contribute their own translations and possibly be independent in the kind of angular-translate loader it uses.
 
@@ -14,6 +14,12 @@ Available as [npm package](https://www.npmjs.com/package/angular-translate-loade
 
 ```
 $ npm install angular-translate-loader-pluggable --save
+```
+
+or as Bower package
+
+```
+$ bower install angular-translate-loader-pluggable --save
 ```
 
 ## Docs & Demo
@@ -71,3 +77,5 @@ angular
 ## Contribute
 
 Of course! If you have improvements, suggestions, let me know about them and either file some issues to discuss something or even better, submit a PR. Please check out our [contribution guidelines](CONTRIBUTING.md)!
+
+

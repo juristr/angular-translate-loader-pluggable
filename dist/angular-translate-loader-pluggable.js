@@ -13,7 +13,9 @@
 })(this, function (exports) {
   'use strict';
 
-  angular.module('angular-translate-loader-pluggable', ['pascalprecht.translate']).provider('translatePluggableLoader', translatePluggableLoaderProvider);
+  var moduleName = 'angular-translate-loader-pluggable';
+
+  angular.module(moduleName, ['pascalprecht.translate']).provider('translatePluggableLoader', translatePluggableLoaderProvider);
 
   function translatePluggableLoaderProvider() {
     var loaders = [];
@@ -71,5 +73,12 @@
         return deferred.promise;
       };
     }];
+  }
+
+  // commonjs export
+  if (typeof exports !== 'undefined') {
+    module.exports = {
+      name: moduleName
+    };
   }
 });
