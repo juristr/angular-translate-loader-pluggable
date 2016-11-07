@@ -77,3 +77,5 @@ angular
 ## Contribute
 
 Of course! If you have improvements, suggestions, let me know about them and either file some issues to discuss something or even better, submit a PR. Please check out our [contribution guidelines](CONTRIBUTING.md)!
+
+
