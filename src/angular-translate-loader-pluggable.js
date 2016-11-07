@@ -10,7 +10,7 @@ function translatePluggableLoaderProvider() {
   var loaders = [];
   var translationTable = {};
 
-  this.useLoader = function(loaderName, options) {
+  this.useLoader = function (loaderName, options) {
     loaders.push({
       name: loaderName,
       options: options
@@ -19,26 +19,26 @@ function translatePluggableLoaderProvider() {
     return this;
   };
 
-  this.translations = function(language, translations) {
+  this.translations = function (language, translations) {
     translationTable[language] = angular.extend({}, translationTable[language], translations);
 
     return this;
   };
 
-  this.$get = function($q, $injector) {
-    return function(options) {
+  this.$get = function ($q, $injector) {
+    return function (options) {
       var deferred = $q.defer();
 
       var loaderInstances = [];
 
       // lookup in translation table
-      loaderInstances.push(function() {
+      loaderInstances.push(function () {
         var deferred = $q.defer();
 
         deferred.resolve(translationTable[options.key]);
 
         return deferred.promise;
-      }());
+      } ());
 
       // lookup in loaders
       for (var i = 0; i < loaders.length; i++) {
@@ -50,7 +50,7 @@ function translatePluggableLoaderProvider() {
       }
 
       $q.all(loaderInstances)
-        .then(function(loaders) {
+        .then(function (loaders) {
           var result;
 
           for (var i = 0; i < loaders.length; i++) {
@@ -66,4 +66,9 @@ function translatePluggableLoaderProvider() {
   };
 }
 
-return moduleName;
+// commonjs export
+if (typeof exports !== 'undefined') {
+  module.exports = {
+    name: moduleName
+  };
+}
