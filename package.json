@@ -49,5 +49,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/juristr/angular-translate-loader-pluggable.git"
-  }
+  },
+  "version": "1.2.0"
 }
