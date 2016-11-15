@@ -67,7 +67,7 @@ function translatePluggableLoaderProvider() {
 }
 
 // commonjs export
-if (typeof exports !== 'undefined') {
+if (typeof exports !== 'undefined' && module && typeof module.exports === "object") {
   module.exports = {
     name: moduleName
   };
