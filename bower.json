@@ -4,6 +4,7 @@
   "authors": [
     "Juri <juri.strumpflohner@gmail.com>"
   ],
+  "main": "dist/angular-translate-loader-pluggable.min.js",
   "homepage": "https://github.com/juristr/angular-translate-loader-pluggable",
   "keywords": [
     "angular",
