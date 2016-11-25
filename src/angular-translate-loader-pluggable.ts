@@ -1,4 +1,6 @@
-var moduleName = 'angular-translate-loader-pluggable';
+import * as angular from 'angular';
+
+const moduleName = 'angular-translate-loader-pluggable';
 
 angular
   .module(moduleName, [
@@ -6,9 +8,9 @@ angular
   ])
   .provider('translatePluggableLoader', translatePluggableLoaderProvider);
 
-function translatePluggableLoaderProvider() {
-  var loaders = [];
-  var translationTable = {};
+function translatePluggableLoaderProvider(): any {
+  let loaders = [];
+  let translationTable = {};
 
   this.useLoader = function (loaderName, options) {
     loaders.push({
@@ -27,13 +29,13 @@ function translatePluggableLoaderProvider() {
 
   this.$get = function ($q, $injector) {
     return function (options) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
 
-      var loaderInstances = [];
+      let loaderInstances = [];
 
       // lookup in translation table
       loaderInstances.push(function () {
-        var deferred = $q.defer();
+        let deferred = $q.defer();
 
         deferred.resolve(translationTable[options.key]);
 
@@ -41,19 +43,19 @@ function translatePluggableLoaderProvider() {
       } ());
 
       // lookup in loaders
-      for (var i = 0; i < loaders.length; i++) {
-        var loader = loaders[i];
+      for (let i = 0; i < loaders.length; i++) {
+        let loader = loaders[i];
 
         // get the loader and resolve it, passing in the required options
-        var loaderPromise = $injector.get(loader.name)(angular.extend(options, loader.options));
+        let loaderPromise = $injector.get(loader.name)(angular.extend(options, loader.options));
         loaderInstances.push(loaderPromise);
       }
 
       $q.all(loaderInstances)
         .then(function (loaders) {
-          var result;
+          let result;
 
-          for (var i = 0; i < loaders.length; i++) {
+          for (let i = 0; i < loaders.length; i++) {
             result = angular.extend({}, result, loaders[i]);
           }
 
@@ -66,9 +68,8 @@ function translatePluggableLoaderProvider() {
   };
 }
 
-// commonjs export
-if (typeof exports !== 'undefined' && module && typeof module.exports === "object") {
-  module.exports = {
-    name: moduleName
-  };
+const moduleDefinition = {
+  name: moduleName
 }
+
+export default moduleDefinition;
