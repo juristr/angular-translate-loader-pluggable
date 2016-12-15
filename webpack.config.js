@@ -14,7 +14,7 @@ module.exports = {
   output: {
     path: DEST,
 
-    filename: 'angular-translate-loader-pluggable.js',
+    filename: 'angular-translate-loader-pluggable.min.js',
     library: 'angular-translate-loader-pluggable',
     libraryTarget: 'umd',
     sourceMapFilename: '[name].map',
