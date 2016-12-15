@@ -35,8 +35,7 @@ module.exports = {
             enforce: 'pre',
             test: /\.js$/,
             loader: 'source-map-loader',
-            exclude: [
-            ]
+            exclude: []
         }, {
             test: /\.ts$/,
             loader: 'awesome-typescript-loader',

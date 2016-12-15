@@ -58,10 +58,10 @@ module.exports = function(config) {
         ],
 
         customLaunchers: {
-            ChromeTravisCi: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            }
+          ChromeTravisCi: {
+              base: 'Chrome',
+              flags: ['--no-sandbox']
+          }
         },
 
         singleRun: true
@@ -70,6 +70,7 @@ module.exports = function(config) {
     if (process.env.TRAVIS){
         configuration.browsers = [
             'ChromeTravisCi'
+            // 'PhantomJS'
         ];
     }
 

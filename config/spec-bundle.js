@@ -14,7 +14,7 @@ var testContext = require.context('../tests', true, /\.spec\.ts/);
  * loop and require those spec files here
  */
 function requireAll( requireContext ) {
-  return requireContext.keys().map( ( path ) => {
+  return requireContext.keys().map(function( path ) {
     try {
       return requireContext( path );
     } catch ( err ) {
