@@ -4,7 +4,8 @@ const moduleName = 'angular-translate-loader-pluggable';
 
 angular
   .module(moduleName, [
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngPromiseExtras'
   ])
   .provider('translatePluggableLoader', translatePluggableLoaderProvider);
 
@@ -51,12 +52,14 @@ function translatePluggableLoaderProvider(): any {
         loaderInstances.push(loaderPromise);
       }
 
-      $q.all(loaderInstances)
+      $q.allSettled(loaderInstances)
         .then(function (loaders) {
           let result;
 
           for (let i = 0; i < loaders.length; i++) {
-            result = angular.extend({}, result, loaders[i]);
+            if(loaders[i].state === 'fulfilled') {
+              result = angular.extend({}, result, loaders[i].value);
+            }
           }
 
           deferred.resolve(result);

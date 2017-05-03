@@ -67,5 +67,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/juristr/angular-translate-loader-pluggable.git"
+  },
+  "dependencies": {
+    "angular-promise-extras": "^0.1.8"
   }
 }
