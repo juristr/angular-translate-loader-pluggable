@@ -1,5 +1,3 @@
-import * as angular from 'angular';
-
 const moduleName = 'angular-translate-loader-pluggable';
 
 angular
